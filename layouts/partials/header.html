@@ -31,12 +31,18 @@
     
 
     {{ partial "custom-head.html" . }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
   </head>
   <body class="" data-url="{{ .RelPermalink }}">
     {{ partial "menu.html" . }}
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
+        {{if not .Site.Params.noSearch}}
+          <div class="searchbox-algolia" align="right">
+            <input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
+          </div>
+        {{end}}
         {{if not .IsHome}}
           <div id="top-bar">
             {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}

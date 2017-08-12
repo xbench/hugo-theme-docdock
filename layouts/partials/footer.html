@@ -69,5 +69,14 @@
     
 
     {{ partial "custom-footer.html" . }}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    <script type="text/javascript"> docsearch({
+            apiKey: '27d19aed6b19eb9816efc32e627d3ba0',
+            indexName: 'xbench',
+            inputSelector: '[id="search-by"]',
+            debug: false // Set debug to true if you want to inspect the dropdown
+        });
+    </script>
+
   </body>
 </html>
